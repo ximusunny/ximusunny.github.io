@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>玩转AIGC-----AI工具-----图片篇 | 智游世界</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="前言在学习该篇文章前，我会先介绍一下AI绘画工具使用原则和基本功能，再介绍一下AI绘画工具的生态和商业使用情况，其次再结合实际使用情况提供提示词解决方案，最后对高频问题答疑。 开始阅读这篇文章之前，请先阅读以下注意事项：  1.AI绘画的所有图像数据都是基于现实的绘画画师和艺术从业者的灵感和作品，或其他行业的提供图像来源，不论AI发展到什么程度，请对以上绘画画师和艺术从业者保持最起码的尊重2.遵守">
+<meta property="og:type" content="article">
+<meta property="og:title" content="玩转AIGC-----AI工具-----图片篇">
+<meta property="og:url" content="http://example.com/2023/06/21/aigc-image/index.html">
+<meta property="og:site_name" content="智游世界">
+<meta property="og:description" content="前言在学习该篇文章前，我会先介绍一下AI绘画工具使用原则和基本功能，再介绍一下AI绘画工具的生态和商业使用情况，其次再结合实际使用情况提供提示词解决方案，最后对高频问题答疑。 开始阅读这篇文章之前，请先阅读以下注意事项：  1.AI绘画的所有图像数据都是基于现实的绘画画师和艺术从业者的灵感和作品，或其他行业的提供图像来源，不论AI发展到什么程度，请对以上绘画画师和艺术从业者保持最起码的尊重2.遵守">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/06/21/aigc-image/ximu_On_a_summer_afternoon_at_the_beach_the_sky_is_clear_with_t_afcfc1ea-6361-414a-9d57-110de4ab387e.png">
+<meta property="og:image" content="http://example.com/2023/06/21/aigc-image/cc93944d-8546-49c4-b8a5-76d589d72b9e.jpg">
+<meta property="og:image" content="http://example.com/2023/06/21/aigc-image/e137089c-deee-4a95-b816-6ecc404e505b.jpg">
+<meta property="og:image" content="http://example.com/2023/06/21/aigc-image/8ab48df6-5bca-40b7-91cb-45fea8a316e6.jpg">
+<meta property="og:image" content="http://example.com/2023/06/21/aigc-image/ed68bb1c-3f75-48d6-a2bd-b6cd90b9c7ce.jpg">
+<meta property="og:image" content="http://example.com/2023/06/21/aigc-image/272efab1-4813-4ecf-973e-1622fd1b5459.jpg">
+<meta property="og:image" content="http://example.com/2023/06/21/aigc-image/419d23bb-ec90-4052-a571-bca1b03247a4.jpg">
+<meta property="og:image" content="http://example.com/2023/06/21/aigc-image/02235231-7917-4b3d-9f01-98bd3adcd27e.jpg">
+<meta property="og:image" content="http://example.com/2023/06/21/aigc-image/e7514a33-e80b-4077-aef4-6de53fae5b1b.jpg">
+<meta property="og:image" content="http://example.com/2023/06/21/aigc-image/weirdwonderfulai.art.jpg">
+<meta property="article:published_time" content="2023-06-21T14:12:57.000Z">
+<meta property="article:modified_time" content="2023-06-23T16:10:43.563Z">
+<meta property="article:author" content="昔木">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/06/21/aigc-image/ximu_On_a_summer_afternoon_at_the_beach_the_sky_is_clear_with_t_afcfc1ea-6361-414a-9d57-110de4ab387e.png">
+  
+    <link rel="alternate" href="/atom.xml" title="智游世界" type="application/atom+xml">
+  
+  
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/banner.png" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>智游世界 </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS 订阅">
+        <span class="material-symbols-rounded rss">rss_feed</span>
+      </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS 订阅">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/avatar.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">昔木 </div>
+      <div class="dot"></div>
+      <div class="subtitle">程序员 峡谷召唤师     想做一个散人 在尘世里遨游 </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/ximusunny" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" href="tencent://Message/?Uin=745491146&amp;websiteName=q-zone.qq.com&amp;Menu=yes" title="qq"><i class="fa-brands fa-qq"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/ximusunny" title="weixin"><i class="fa-brands fa-weixin"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/AI/">
+                AI
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/06 ">
+          六月 2023 
+          <div class="archive-count">1 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <li>
+            <a href="/2023/06/21/aigc-image/">玩转AIGC-----AI工具-----图片篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-aigc-image" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        玩转AIGC-----AI工具-----图片篇
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-06-21T14:12:57.000Z" itemprop="datePublished">2023-06-21</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/AI/">AI</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            5.4k 词 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在学习该篇文章前，我会先介绍一下AI绘画工具使用原则和基本功能，再介绍一下AI绘画工具的生态和商业使用情况，其次再结合实际使用情况提供提示词解决方案，最后对高频问题答疑。</p>
+<p><strong>开始阅读这篇文章之前，请先阅读以下注意事项：</strong></p>
+<blockquote>
+<p>1.AI绘画的所有图像数据都是基于现实的绘画画师和艺术从业者的灵感和作品，或其他行业的提供图像来源，不论AI发展到什么程度，请对以上绘画画师和艺术从业者保持最起码的尊重<br>2.遵守现实法律，保护商品和模型作者的著作权<br>3.真人模型可能涉及到伦理、法律问题，这里不做议论，还望读者注意使用范围<br>4.本文基于分享目的，只提供基础思路指南。不论是浏览、转发等，引起的一切纠纷和后果与本作者无关，一概由读者本人负责<br><strong>5.如果不能接受，请不要继续浏览；继续浏览，则默认为同意以上所有注意事项。</strong></p>
+</blockquote>
+<h2 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h2><h3 id="AI绘画的主要功能"><a href="#AI绘画的主要功能" class="headerlink" title="AI绘画的主要功能"></a><strong>AI绘画的主要功能</strong></h3><ol>
+<li><strong>图像生成（文生图）</strong>：AI绘画能根据你输入的提示词，通过机器学习模型生成图片作品，这些图片作品往往不会重复，但是会涉及到版权问题，如果你使用SD的模型创建图片，需要注意这个问题。提示词是AI绘图工具最重要的东西，提示词决定了图片的优劣，后文会介绍一些提示词生成的工具</li>
+<li><strong>图像生成（图生图）</strong>：目前热门的一些AI工具已经可以根据图片生成图片了，也是比较容易变现的一种方案</li>
+<li><strong>提示词生成（图生文）</strong>：一些AI工具能够根据用户提供的图片反推出提示词，提示词的质量跟图片有关，后文会介绍</li>
+<li><strong>图像修复与颜色化</strong>：该功能主要用机器学习算法实现图片的放大和修改图片颜色布局的功能</li>
+</ol>
+<p><strong>Midjourney示例：</strong></p>
+<p><img src="/2023/06/21/aigc-image/ximu_On_a_summer_afternoon_at_the_beach_the_sky_is_clear_with_t_afcfc1ea-6361-414a-9d57-110de4ab387e.png"></p>
+<p>提示词</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">On a summer afternoon at the beach, the sky is clear with the sun shining brightly. People are peacefully sleeping and running on the sandy beach, while others enjoy surfing in the ocean. The image captures the tranquility and joy of the scene, showcasing the vibrant colors of the beach umbrellas, the sparkling water, and the golden sand. The style for this image is a vivid and lifelike photograph, taken with a wide-angle lens to encompass the entire beach, --ar 16:9 --v 5</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="AI绘画工具生态情况"><a href="#AI绘画工具生态情况" class="headerlink" title="AI绘画工具生态情况"></a>AI绘画工具生态情况</h2><h3 id="1-AI工具汇总"><a href="#1-AI工具汇总" class="headerlink" title="1.AI工具汇总"></a>1.AI工具汇总</h3><h4 id="1-1-国内AI绘画工具"><a href="#1-1-国内AI绘画工具" class="headerlink" title="1.1 国内AI绘画工具"></a>1.1 国内AI绘画工具</h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>价格</th>
+<th>介绍</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>无界版图</td>
+<td>每天免费 15 次+付费</td>
+<td>无界版图提供强大的 AI 创作能力，支持中英文， 二次元， 可以方便的进行 AI 绘画！最近抖音很火的 AI 绘图壁纸，使用这个工具便可以轻松制作！支持电脑和手机！支持中英文输入。建议使用手机访问，这样随时 随地 AI 做图。</td>
+<td><a target="_blank" rel="noopener" href="https://www.wujiebantu.com/ai">https://www.wujiebantu.com/ai</a></td>
+</tr>
+<tr>
+<td>意间AI绘画</td>
+<td></td>
+<td>意间 AI 绘画创意云是一个 AI 绘画小程序，无须下载在线绘画，直接在微信上就可以作画！ 使用 Al 的力量创作精美艺术品， 支持中文描述词和英文双输入，输入关键词，并选择一种艺术风格,开始油染， 数分钟内即可将您的想法变成一幅精美的人工智能绘画</td>
+<td><a target="_blank" rel="noopener" href="http://portal.yjai.art/?viaurl=ainavpro.com#/">http://portal.yjai.art/?viaurl=ainavpro.com#/</a></td>
+</tr>
+<tr>
+<td>文心一言</td>
+<td></td>
+<td>百度出品AI绘画工具</td>
+<td><a target="_blank" rel="noopener" href="https://yiyan.baidu.com/">https://yiyan.baidu.com</a></td>
+</tr>
+<tr>
+<td>文心一格</td>
+<td></td>
+<td>百度的 AI 自动绘画工具「一格」，目前略有瑕疵，但使用简单，图像生成速度快。 目前平台处于公测阶段，想尝试的需要申请公测资格。</td>
+<td><a href="https://security.feishu.cn/link/safety?target=https://yige.baidu.com/&scene=ccm&logParams=%7B%22location%22:%22ccm_default%22%7D&lang=zh-CN">https://yige.baidu.com</a></td>
+</tr>
+<tr>
+<td>6pen.art</td>
+<td></td>
+<td>同样是国内团队出品，用户无需内测，打开后直接可以使用。 6pen 支持图像尺寸，参考图，随机种子等核心功能。 另外， 6pen 支持中文，而且汇总了不同的 绘 画 风 格 ，用 户 在 输 入 文 字 描 述 的 同 时 ，还 可 以 选 择 水 墨 画 、 油 画 、 素 描 等 风 格 ， 同时还可以选择仙境、 赛博朋克、 超现实等风格修饰。</td>
+<td><a target="_blank" rel="noopener" href="https://6pen.art/">https://6pen.art/</a></td>
+</tr>
+<tr>
+<td>draft</td>
+<td></td>
+<td>Draft 是一个中文 AI 绘画平台，支持中英文，也是一个 AI 绘画社区。创作使用非常简单，移动端&#x2F;pc 端输入网址即可使用，无需下载。只需要输入一句简单的描述语，就能生成你想要的画作，生成速度也相当不错，快的话，只要十秒就能出图。并且可以生成目前抖音上非常火爆的二次元 AI 绘画作品！ 截止目前， Draft AI 绘画平台社区用户已创作超过 5000 万张 AI 绘画作品。</td>
+<td><a target="_blank" rel="noopener" href="https://draft.art/25388">https://draft.art/25388</a></td>
+</tr>
+<tr>
+<td>盗梦师</td>
+<td></td>
+<td>盗梦师 Printidea，支持中英文， 二次元， 是一款基于 Al 算法， 可将文字描述转变成高质量图片的 AI 绘画工具， 是由西湖大学深度学习实验室和西湖心辰联合出品的国产 AI 绘画工具，超强算力，超快出图。 目前支持微信小程序和网页端等。</td>
+<td><a target="_blank" rel="noopener" href="https://printidea.art/">https://printidea.art/</a></td>
+</tr>
+<tr>
+<td>即时 AI</td>
+<td></td>
+<td>即时设计推出 AI 作画插件，不仅能让没有任何美术或设计功底的用户，轻松通过 AI 创作图片。 设计师只要在「即时设计」中打开「 即时 AI 」 , 描述一下自己希望这张图片拥有怎样的画面，再构建基础图形、控制颜色、调整布局后， AI 就能根据给出的信息，快速生成创作。</td>
+<td><a target="_blank" rel="noopener" href="https://js.design/">https://js.design/</a></td>
+</tr>
+<tr>
+<td>Tiamat</td>
+<td></td>
+<td>国内的 AI 图像生成器，程序服务与社群目前都是放在飞书上运行的。 其优点 在于支持纯中文提示词，图像生成速度在 5-6 分钟，图像质量非常不错，且图 像风格与国外的 Disco Difussion 和 Midjourney 相比有明显的 “ 中国风 ” 特色。 Tiamat 目前也开放了内测申请渠道，需要的话可以申请</td>
+<td><a target="_blank" rel="noopener" href="https://tiamat-ai.feishu.cn/share/base/shrcn2uXL8wNiveykIFYqWSzsPf?continueFlag=fd7177d89cdd18c8edaf2c7f28f06678">https://tiamat-ai.feishu.cn/share/base/shrcn2uXL8wNiveykIFYqWSzsPf?continueFlag=fd7177d89cdd18c8edaf2c7f28f06678</a></td>
+</tr>
+<tr>
+<td>酷站 AI 创作实验室</td>
+<td>每天免费 20 点</td>
+<td>支持中英文，二次元</td>
+<td><a target="_blank" rel="noopener" href="https://www.zcool.com.cn/ailab">https://www.zcool.com.cn/ailab</a></td>
+</tr>
+</tbody></table>
+<h4 id="1-2-国外AI绘画工具"><a href="#1-2-国外AI绘画工具" class="headerlink" title="1.2 国外AI绘画工具"></a>1.2 国外AI绘画工具</h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>价格</th>
+<th>介绍</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Disco Diffusion</td>
+<td></td>
+<td>一款利用人工智能深度学习进行数字艺术创作的工具，它是基于 MIT 许可协议 的开源工具，可以用于商业用途。操作比较原生态，需要很高的学习成本</td>
+<td><a target="_blank" rel="noopener" href="https://colab.research.google.com/github/alembics/disco-diffusion/blo">https://colab.research.google.com/github/alembics/disco-diffusion/blo</a></td>
+</tr>
+<tr>
+<td>Midjourney</td>
+<td>基础版：10美元</td>
+<td>一款搭载在 Discord 上的人工智能绘画聊天机器人，图像生成速度极快，相对 于 Disco Diffusion 上手简单。 很多艺术家会使用 Midjourney 生成自己想要 图像作为创作灵感参考。</td>
+<td><a target="_blank" rel="noopener" href="https://www.midjourney.com/home/">https://www.midjourney.com/home/</a></td>
+</tr>
+<tr>
+<td>Novel AI</td>
+<td></td>
+<td>号称最强二次元生成 AI 工具，非常适合用于漫画创作，本来开发的目的是为了 人工智能写小说用的，里面的绘画功能是用来给小说配图的，万万没想到，人家 这款附带的配图绘画功能居然这么强大，现在这款应用被人用爆了的就是绘图功能。</td>
+<td><a target="_blank" rel="noopener" href="https://novelai.net/">https://novelai.net</a></td>
+</tr>
+<tr>
+<td>Imagen</td>
+<td>未开放</td>
+<td>谷歌出品的图像生成工具，同样是输入文本就能出图。谷歌表示， Imagen 可以创建比 OpenAI 的人工智能工具 DALL-E2 更逼真和逼真的图像，不过目前暂未公开 Imagen</td>
+<td><a target="_blank" rel="noopener" href="https://imagen.research.google/">https://imagen.research.google/</a></td>
+</tr>
+<tr>
+<td>Parti</td>
+<td></td>
+<td>Parti 是 Google 在推出 Imagen 不久后推出的另一款文本 - 图像生成模型。 二 者 都 是 专 注 于 通 过 文 本 生 成 逼 真 的 图 像 ， 区 别 在 于 I magen 是 扩 散 （ CLIP ） 模型，而 Parti 是路径自回归文本 - 图像（ Pathways Autoregressive Text-to-Image ） 生成模型，后者可实现高保真、 极具真实感的图像生成。</td>
+<td><a target="_blank" rel="noopener" href="https://parti.research.google/">https://parti.research.google/</a></td>
+</tr>
+<tr>
+<td>NUWA</td>
+<td></td>
+<td>微软出品的 AI 绘画工具，支持生成任意尺寸、 任意大小的高分辨率图像，以适配不同设备 、 平台和场景 。 该 工 具 可 以 生 成 任 意 大 小 的 高 清 图 象 ， 并 支 持 视 频 导 出 。 其一大亮点是它的无限延展能力。</td>
+<td><a target="_blank" rel="noopener" href="https://nuwa-infinity.microsoft.com/">https://nuwa-infinity.microsoft.com/</a></td>
+</tr>
+<tr>
+<td>NightCafe Creato</td>
+<td></td>
+<td>一款免费的人工智能绘画灵感生成器，你只需输入一段描述文本，自动生成对应场景的图片。</td>
+<td><a target="_blank" rel="noopener" href="https://creator.nightcafe.studio/">https://creator.nightcafe.studio/</a></td>
+</tr>
+</tbody></table>
+<h3 id="2-商用情况汇总"><a href="#2-商用情况汇总" class="headerlink" title="2.商用情况汇总"></a>2.商用情况汇总</h3><h4 id="变现模式"><a href="#变现模式" class="headerlink" title="变现模式"></a>变现模式</h4><p>我整理了目前AI绘画类可复制的变现模式，这些来源于同行分享和实操得出的结果</p>
+<table>
+<thead>
+<tr>
+<th>变现模式</th>
+<th>变现产品描述</th>
+<th>价格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>广告</td>
+<td>接商单，推广。</td>
+<td>视频500-4000，图文200-2w不等。</td>
+</tr>
+<tr>
+<td>定制</td>
+<td>为c端粉丝定制头像。</td>
+<td>千粉账号50-100&#x2F;张，万粉账号150-200&#x2F;张。</td>
+</tr>
+<tr>
+<td>收徒</td>
+<td>收徒弟，1v1带教。</td>
+<td>1000-1999&#x2F;人</td>
+</tr>
+<tr>
+<td>知识付费</td>
+<td>出ai绘画课程、教程</td>
+<td>299-599</td>
+</tr>
+<tr>
+<td>社群</td>
+<td>付费的ai绘画交流群</td>
+<td>99-599</td>
+</tr>
+<tr>
+<td>推图社、神图</td>
+<td>上传图片到推图社、神图平台，用户下载图片就可以赚钱</td>
+<td>1次3毛，出了爆款，流量高的每天几百-几千块不等。</td>
+</tr>
+</tbody></table>
+<h4 id="小红书AI绘画变现"><a href="#小红书AI绘画变现" class="headerlink" title="小红书AI绘画变现"></a>小红书AI绘画变现</h4><h5 id="绘画工具mewxai"><a href="#绘画工具mewxai" class="headerlink" title="绘画工具mewxai"></a>绘画工具mewxai</h5><p>mewxai是一款微信小程序，打开你的微信，搜索”mewxai”就可以找到，意为”我的微信ai”，由于读音不太习惯，加上它的头像酷似一个一个小海豚，所以ai绘画圈子一般称它为”小海豚”，截止2023-03-19日，mewxai的主要功能包括画廊、创作、我的三部分。</p>
+<h5 id="【画廊】功能"><a href="#【画廊】功能" class="headerlink" title="【画廊】功能"></a>【画廊】功能</h5><p>该功能主要用来学习、复制优秀ai画手的关键词，保证出图的效果。</p>
+<p>画廊分为两部分，第一列是最热作品、第二列是最新作品。</p>
+<p>最热作品：一般都是最受社区ai画手和站外平台欢迎的作品，典型代表就是该社区最热门的流光系列少女，几乎全部出过万赞以上的小红书爆款笔记，”流光｜扎头发女孩”、”流光｜红宝石少女”、”流光｜青龙少女”、”流光｜粉头发酷酷女孩”，新手入门绘画关键词和参数必看。</p>
+<p>最新作品：一般都是社区内部或者近期比较热门的作品，这类作品的典型特征是比较前沿，相对第一类作品，不会太审美疲劳，一定程度上反映了短期内的爆款趋势，对于有一定经验的ai画手，可从这个功能下的作品中，挖掘出新的爆款。</p>
+<p><img src="/2023/06/21/aigc-image/cc93944d-8546-49c4-b8a5-76d589d72b9e.jpg"></p>
+<h5 id="【创作】功能"><a href="#【创作】功能" class="headerlink" title="【创作】功能"></a>【创作】功能</h5><p>该功能主要用户调整关键词、选择参数，点击创作生成图片，该功能界面主要分为ai绘画、手绘头像、古风头像三大类。</p>
+<p><img src="/2023/06/21/aigc-image/e137089c-deee-4a95-b816-6ecc404e505b.jpg"></p>
+<p>这里就以ai画手使用频率最高的ai绘画为例，介绍一下各部分功能。</p>
+<p>（1）绘画描述：用于输入关键词，1000字以内，可点击左下方蓝色刷新按钮获取”推荐词”，一般为英文。</p>
+<p>（2）模型选择：截止2023-03-19，共有19个ai绘画模型，包括</p>
+<p>流光女孩、潮酷cg、甜心女孩2、甜心女孩</p>
+<p>古风v3、蜡笔cg、优化cg、手绘头像</p>
+<p>彩墨丹青、国风水墨、青春复古、doll模型</p>
+<p>韩潮2.5d、现代厚涂、风景光彩、古风2.5d</p>
+<p>彩粉-二次元、通用、二次元</p>
+<p><img src="/2023/06/21/aigc-image/8ab48df6-5bca-40b7-91cb-45fea8a316e6.jpg"></p>
+<p>（3）风格选择：默认为”不选择”、切换”线稿”风格需要删除关键词中色彩描述的部分，才能更稳定出黑白线稿。</p>
+<p>（4）上传参考图：可上传手机里的照片供ai参考，图片中的元素和元素关系可保持不变。</p>
+<p>（5）色彩丰富度：可自由在3-15点之间调整。</p>
+<p>（6）生成尺寸：包括以下五种尺寸。</p>
+<p>1:1适用场景为头像图。</p>
+<p>9:16适合场景为宣传海报。</p>
+<p>16:9适用场景为电脑壁纸。</p>
+<p>3:4适用场景为社交媒体，如小红书。</p>
+<p>4:3适用场景为文章配图。</p>
+<p>（7）生成数量：可基于以上关键词和参数，选择一次性生成1张或4张图片。</p>
+<p>（8）图片质量：可选择”高清”、”超高清”、”超高清修复”三种。</p>
+<p>高清：消耗2积分，日常跑图练习。</p>
+<p>超高清：消耗4积分，精绘，适合近景，比如人物半身像、头像。</p>
+<p>超高清修复：消耗8积分，修复，适合大场景，比如某套关键词经常出现两个头之类的问题。</p>
+<p>（9）高级设置：包含两个可设置的参数</p>
+<p>我不要：去除负面的元素，比手指、手、白块。</p>
+<p>采样方式：Euler，可能会产生更多的锯齿状边缘，生成的图像可能不够平滑；DDIM。简单来说，后面那个生成的图片更加精致。</p>
+<h5 id="【我的】功能"><a href="#【我的】功能" class="headerlink" title="【我的】功能"></a>【我的】功能</h5><p>（1）作品和喜欢：目前最多2500张作品容量，点击画廊的喜欢，作品会包存在这里。</p>
+<p><img src="/2023/06/21/aigc-image/ed68bb1c-3f75-48d6-a2bd-b6cd90b9c7ce.jpg"></p>
+<h2 id="提示词解决方案"><a href="#提示词解决方案" class="headerlink" title="提示词解决方案"></a>提示词解决方案</h2><h3 id="精选AI绘画关键词网站"><a href="#精选AI绘画关键词网站" class="headerlink" title="精选AI绘画关键词网站"></a>精选AI绘画关键词网站</h3><h4 id="OpenArt-ai"><a href="#OpenArt-ai" class="headerlink" title="OpenArt.ai"></a>OpenArt.ai</h4><p>适用绘画工具：DALL·E2、Midjourney、Stable Diffusion。</p>
+<p>这是一个能检索到多家AI绘画生成器AI画作和作品关键词的网站，同样支持关键词搜索，可以为创作者提供创作灵感。</p>
+<p>根据网站介绍，平台提供搜索 DALL·E2、Midjourney、Stable Diffusion 生成的1000万+ AI 艺术和提示词。</p>
+<p><img src="/2023/06/21/aigc-image/272efab1-4813-4ecf-973e-1622fd1b5459.jpg" alt="272efab1-4813-4ecf-973e-1622fd1b5459"></p>
+<h4 id="Arthub-ai"><a href="#Arthub-ai" class="headerlink" title="Arthub.ai"></a>Arthub.ai</h4><p>适用绘画工具：Stable Diffusion。</p>
+<p>sd词库，这个站点提供了大量的艺术家和设计师生成的AI艺术画作和关键词。与lexica.art一样，支持输入关键词搜索。</p>
+<p>网站还对不同图片类型进行分类，方便查看。</p>
+<p>我们可以复制或参考一些好的画作描述，然后去生成。</p>
+<h4 id="Promptomania-com"><a href="#Promptomania-com" class="headerlink" title="Promptomania.com"></a>Promptomania.com</h4><p>适用绘画工具：Midjourney、Stable Diffusion、DreamStudio。</p>
+<p>这是一款编写智能AI绘画关键词（Prompts ）的在线生成工具，提供多种智能AI绘画工具(Midjourney、Stable Diffusion、DreamStudio等)的关键词(Prompts )文本描述模板。</p>
+<p>最终工具可以自动生成所选AI工具规范的AI绘画关键词，提供色彩、风格、插画师、图片比例等描述词，帮你描述出想要的画面。</p>
+<p><img src="/2023/06/21/aigc-image/419d23bb-ec90-4052-a571-bca1b03247a4.jpg" alt="419d23bb-ec90-4052-a571-bca1b03247a4"></p>
+<h4 id="Lexica-art"><a href="#Lexica-art" class="headerlink" title="Lexica.art"></a>Lexica.art</h4><p>适用绘画工具：Stable Diffusion。</p>
+<p>sd词库，该网站拥有数百万Stable Diffusion案例的文字描述和图片，可以为大家提供足够的创作灵感。</p>
+<p>使用上也很简单，只要在搜索框输入简单的关键词或上传图片，就能为你提供大量风格不同的照片。点击照片就能看到完整的AI关键词，点击复制按钮就能直接提取。</p>
+<p><img src="/2023/06/21/aigc-image/02235231-7917-4b3d-9f01-98bd3adcd27e.jpg" alt="02235231-7917-4b3d-9f01-98bd3adcd27e"></p>
+<h4 id="MidJourney-prompt-Helper"><a href="#MidJourney-prompt-Helper" class="headerlink" title="MidJourney prompt Helper"></a>MidJourney prompt Helper</h4><p>适用绘画工具：midjourney。</p>
+<p><a target="_blank" rel="noopener" href="https://prompt.noonshot.com/midjourney">https://prompt.noonshot.com/midjourney</a></p>
+<p>可以辅助你写词的AI智能生成工具，主要针对midjourney 工具。</p>
+<p><img src="/2023/06/21/aigc-image/e7514a33-e80b-4077-aef4-6de53fae5b1b.jpg" alt="e7514a33-e80b-4077-aef4-6de53fae5b1b"></p>
+<p>KREA.ai</p>
+<p>适用绘画工具：Stable Diffusion。</p>
+<p>这个站点收藏了数百万张Stable Diffusion生成的实例，同样支持关键词检索功能。另外，该网站还提供收藏点赞分组功能，方面用户后期自己查看喜欢的作品，目前已经开源。</p>
+<p>AI画廊</p>
+<p>适用绘画工具：Midjourney、Novel 、Stable。</p>
+<p>aigallery.top&#x2F;tool</p>
+<p>适合中文用户，这个网站不仅有大量AI绘画作品关键词可以参考，还提供了针对不同平台Midjourney、Novel 、Stable关键词生成器。</p>
+<p>weirdwonderfulai.art</p>
+<p>适用绘画工具：Disco Diffusion 。</p>
+<p>网址:<a target="_blank" rel="noopener" href="https://weirdwonderfulai.art/resources/disco-diffusion-70-plus-artist-studies/">https://weirdwonderfulai.art/resources/disco-diffusion-70-plus-artist-studies/</a></p>
+<p>使用 Disco Diffusion 将艺术家研究的集合放在一个地方，以帮助大家了解使用不同艺术家姓名会得到什么样的风格。</p>
+<p><img src="/2023/06/21/aigc-image/weirdwonderfulai.art.jpg" alt="weirdwonderfulai.art"></p>
+<p>ai-creator</p>
+<p>适用ai绘画工具：通用。</p>
+<p><a target="_blank" rel="noopener" href="https://ai-creator.net/arts">https://ai-creator.net/arts</a></p>
+<p>提供各种风格的tag，每日更新，主要以人物的tag为主。 提供各种风格的tag，每日更新，主要以人物的tag为主。 适合中文，女性头像比较多。</p>
+<p>词图</p>
+<p>适用ai绘画工具：通用。</p>
+<p><a target="_blank" rel="noopener" href="https://www.prompttool.com/NovelAI">https://www.prompttool.com/NovelAI</a></p>
+<p>适合中文关键词，功能很棒。</p>
+<p>AIGODLIKE社区</p>
+<p>适用ai绘画工具：通用。</p>
+<p><a target="_blank" rel="noopener" href="https://www.aigodlike.com/?refer=17yongai.com">https://www.aigodlike.com/?refer=17yongai.com</a></p>
+<p>二次元词库，魔法类关键词。</p>
+<p>sd艺术风格词库</p>
+<p>适用ai绘画工具：Stable Diffusion。</p>
+<p><a target="_blank" rel="noopener" href="https://rentry.org/artists_sd-v1-4?refer=17yongai.com">https://rentry.org/artists_sd-v1-4?refer=17yongai.com</a></p>
+<p>造梦日记关键词库</p>
+<p>适用ai绘画工具：通用。</p>
+<p><a target="_blank" rel="noopener" href="https://www.printidea.art/">https://www.printidea.art</a></p>
+<p>在网页主页面会显示作者使用的关键词，可以直接复制（有些关键词会被作者关闭）</p>
+<p>鳖哲法典</p>
+<p><a target="_blank" rel="noopener" href="http://tomxlysplay.com.cn/#/">http://tomxlysplay.com.cn/#/</a></p>
+<p>也是由B站的一位up主制作的，从人物样貌到服装类型、画风、环境等分类，有4万多个tag。</p>
+<p>AI魔导树</p>
+<p>适用ai绘画工具：通用。</p>
+<p><a target="_blank" rel="noopener" href="https://aimds.top/home">https://aimds.top/home</a></p>
+<p>AI魔导树主要做TAG的细分与差分展示，让各位魔法师们可以了解不同TAG的加入对画面的影响。本站已收录和整理了<strong>3374</strong>个词条，共分成个<strong>14</strong>大分类，<strong>110</strong>个小分类。已对<strong>1313</strong>个词条进行配图，还将陆续更新。</p>
+<p>片绘</p>
+<p><a target="_blank" rel="noopener" href="https://community.hua-der.com/">https://community.hua-der.com/</a></p>
+<p>一个分享AI绘画图片、模型、tag、教程等内容的AI绘画论坛，点击网站首页左侧的排行，进入周榜、月榜查看，每一张图都超级精美，并且可以复制关键词，以二次元人像类关键词为主。</p>
+<p>NovelAI魔导书</p>
+<p>适用ai绘画工具：通用。</p>
+<p><a target="_blank" rel="noopener" href="https://thereisnospon.github.io/NovelAiTag/">https://thereisnospon.github.io/NovelAiTag/</a></p>
+<p>提供各种正面负面tag，使用非常的方便，支持tag批量导入和导出，还有随机抽卡等功能</p>
+<p>艺术家词库集合</p>
+<p>适用ai绘画工具：midjourney。</p>
+<p><a target="_blank" rel="noopener" href="https://www.midlibrary.io/?refer=17yongai.com">https://www.midlibrary.io/?refer=17yongai.com</a></p>
+<p>手抄本法术</p>
+<p><a target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit#gid=984166552">https://docs.google.com/spreadsheets/d/14Gg1kIGWdZGXyCC8AgYVT0lqI6IivLzZOdIT3QMWwVI/edit#gid=984166552</a></p>
+<p>一个通过表格分享AI绘画tag等资源，多人共创分享，内容多到难以想象。</p>
+<p>b站up主@kozzor的关键词收集</p>
+<p><a target="_blank" rel="noopener" href="https://docs.qq.com/sheet/DVEJacEh6b0JlSXdM?tab=BB08J2">https://docs.qq.com/sheet/DVEJacEh6b0JlSXdM?tab=BB08J2</a></p>
+<p>b站up主@kizzor创建的AI绘画关键词收集，偏二次元。</p>
+<p>魔法百科词典</p>
+<p>AI绘画tag生成器</p>
+<p><a target="_blank" rel="noopener" href="https://aitag.top/">https://aitag.top</a></p>
+<p><strong>Midjourney Prompt生成器</strong></p>
+<p>工具地址:<a target="_blank" rel="noopener" href="https://www.kandouyin.com/">https://www.kandouyin.com/</a></p>
+<h3 id="AI绘画辅助工具汇总"><a href="#AI绘画辅助工具汇总" class="headerlink" title="AI绘画辅助工具汇总"></a>AI绘画辅助工具汇总</h3><p>waifu2x</p>
+<p>放大图片工具</p>
+<p><a target="_blank" rel="noopener" href="https://waifu2x.udp.jp/">https://waifu2x.udp.jp</a><a target="_blank" rel="noopener" href="https://waifu2x.udp.jp/">&#x2F;</a></p>
+<p>本程序使用卷积神经网络对动漫风格的图片进行放大操作（支持照片）。</p>
+<p>replicate</p>
+<p>图片关键词倒推工具</p>
+<p>bigjpg</p>
+<p>AI人工智能图片放大</p>
+<p>精选10个ai工具导航网站</p>
+<p>1、<a target="_blank" rel="noopener" href="http://aigc.cn/">AIGC.CN</a>中文导航</p>
+<p>地址：<a target="_blank" rel="noopener" href="https://aigc.cn/">aigc.cn</a></p>
+<p>简介：汇总了国内外几百款aigc工具，包含文本写作、聊天机器人、音乐制作、绘画、视频生成等超过40个方向，几乎没有你找不到的aigc工具链接🔗。</p>
+<p>2、一起用ai</p>
+<p>地址：<a target="_blank" rel="noopener" href="https://17yongai.com/">17yongai.com</a></p>
+<p>简介：对小白用户非常友好，不仅有工具导航，而且有简明的使用教程，主要专注于AI绘画，AI音视频和AI游戏内容生产这三个方向。</p>
+<p>3、AINAV-专注人工智能的导航站</p>
+<p>地址：<a target="_blank" rel="noopener" href="https://www.ainavpro.com/">www.ainavpro.com</a></p>
+<p>简介：对市面上大部分AI产品进行了分类，包括文本处理、图片处理、代码工具、音频处理、视频处理、3D建模等，可以很快速找到自己所需的工具和资源。</p>
+<p>4、AI研究所</p>
+<p>地址：<a target="_blank" rel="noopener" href="http://www.aiyjs.com/">www.aiyjs.com</a></p>
+<p>简介：国内外AI工具资讯首发站，迄今为止收录了超过1200款ai工具，目前大部分内容以资讯更新的形式，体验非常好，适合想尝鲜的朋友。</p>
+<p>5、aitoolist</p>
+<p>地址：<a target="_blank" rel="noopener" href="https://www.aitoolist.cn/">www.aitoolist.cn</a></p>
+<p>简介：ai工具集合，目前收录了1053个ai工具，可收入名字在站内直接搜索。</p>
+<p>6、aihub</p>
+<p>地址：<a target="_blank" rel="noopener" href="https://www.aihub.cn/">www.aihub.cn</a></p>
+<p>简介：比较简洁的导航，人工智能工具箱，包含AI绘画、AI写作、聊天机器人、AI音频生成、AI视频生成、AI编程、AI音乐生成、AI虚拟人等工具。</p>
+<p>7、ai-lib</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://www.ai-lib.club/">www.ai-lib.club</a></p>
+<p>简介：发现最新的人工智能工具、服务、资源，来帮助你完成工作。</p>
+<p>8、深度导航</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://www.deepdh.com/ai">https://www.deepdh.com/ai</a></p>
+<p>简介：深度网址导航是国内不错的导航分类平台，收录国内外各类型网站供网友检索，包括人工智能AI工具网址集合。人工智能领域工具包括聊天AI、文章AI、图片AI、音频AI、视频AI、编程AI、游戏AI等等AI工具。</p>
+<p>9、AI工具集导航</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://ai-bot.cn/">https://ai-bot.cn/</a></p>
+<p>简介：AI工具集导航 <strong>精选了500+的国内外AI工具</strong>，网站界面设计简约美观！除此之外，该网站还 <strong>收录了常用的AI学习网站、AI开发框架和AI训练模型，帮助你全面的了解AI的应用场景</strong>，提升你的生产力。</p>
+<p>10、<strong>工具达人官网</strong> </p>
+<p>链接：<a target="_blank" rel="noopener" href="https://toolsdar.com/ai">https://toolsdar.com/ai</a></p>
+<p>简介：工具达人的AI导航是一个AI人工智能工具导航网站，该网站目前 <strong>收录了文本语言、图片处理、音频处理、视频处理、生活助手、代码编程</strong> 等6大分类的AI工具。</p>
+<p>6.2 国外ai工具导航网站</p>
+<p><strong>1、</strong><a target="_blank" rel="noopener" href="https://saasaitools.com/#tools">saasaitools.com</a> </p>
+<p><strong>2、</strong><a target="_blank" rel="noopener" href="https://allthingsai.com/">allthingsai.com</a></p>
+<p><strong>3、</strong><a target="_blank" rel="noopener" href="https://futurepedia.io/">futurepedia.io</a></p>
+<p><strong>4、</strong><a target="_blank" rel="noopener" href="https://futuretools.io/?tags-n5zn=finance">futuretools.io</a></p>
+<p><strong>5、</strong><a target="_blank" rel="noopener" href="https://gpt3demo.com/map">gpt3demo.com</a></p>
+<p><strong>6、</strong><a target="_blank" rel="noopener" href="https://aidesignresource.com/">https://aidesignresource.com/</a></p>
+<p><strong>7、</strong><a target="_blank" rel="noopener" href="https://theresanaiforthat.com/">https://theresanaiforthat.com/</a></p>
+<p><strong>8、</strong><a target="_blank" rel="noopener" href="https://ignacio-velasquez.notion.site/350-AI-Resources-30379fa273a740aa9e263a405d0f80f1">https://ignacio-velasquez.notion.site/350-AI-Resources-30379fa273a740aa9e263a405d0f80f1</a></p>
+<p><strong>9、</strong><a target="_blank" rel="noopener" href="https://ai2045.com/">https://ai2045.com/</a></p>
+<p><strong>10、</strong><a target="_blank" rel="noopener" href="https://www.aitoolhunt.com/">https://www.aitoolhunt.com/</a></p>
+<h2 id="AI绘画工具高频问题答疑"><a href="#AI绘画工具高频问题答疑" class="headerlink" title="AI绘画工具高频问题答疑"></a>AI绘画工具高频问题答疑</h2><ul>
+<li><strong>如何用ChatGPT批量生成工业级提示词,并在MJ里面生成AI图片？</strong><ul>
+<li>使用插件，如AIPRM for ChatGPT 、awesome-chatgpt-prompts 等</li>
+<li>训练玩法，通过大量的对话、喂词来培养GPT的输出内容</li>
+<li>使用成熟的提示词，让GPT扮演不同的角色，产生出不同效果的MJ提示词</li>
+<li>其他提示词网站</li>
+<li>这个问题我会写一篇文章来讲解</li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+
+  
+</article>
+
+
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">留言 </div>
+    </div>
+    <div id="vcomments"></div>
+  </div>
+  <script>
+      new Valine({
+          el: '#vcomments',
+          appId: "Q8EdnkxhfcyVKxGEE4FA2rNx-gzGzoHsz",
+          appKey: "RqSUCi6bfY9bNTd8uux16S26"
+      })
+  </script>
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 昔木<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.style.opacity = 1;
+        } else {
+            btn.style.opacity = 0;
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
